@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora amplificacodes operacionales</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="estilos.css" />
+
+
+  </head>
+<body>
+<ion-app>
+  <ion-header>
+    <ion-toolbar color="primary ">
+      <ion-buttons slot="start">
+        <ion-button >
+          <ion-icon name="calculator" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title >
+      Op Amp Designer tool
+    </ion-title>
+    </ion-toolbar>
+    
+  </ion-header>
+  <ion-content>
+  <ion-card color="light">
+    <ion-card-header >
+      <ion-card-title>
+        <center>        Generador inversor no inversor
+        </center>
+      </ion-card-title>
+      <ion-card-subtitle  style="text-align: justify; font-size: 15px;">
+        Esta poderosa herramienta web permite calcular las resistencias necesarias para una ganancia deseada. Seleccione el tipo de configuración, la ganancia requerida y el porcentaje de toleracia requerido para el calculo. Automaticamente se otorgará un conjunto de resistencias que cumplen con los requisitos propuestos.
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item id="ganancia" margin-vertical>
+        <ion-label position="floating" >Ganancia (Adimensional)</ion-label>
+        <ion-input type="text" id="GainUser" clear-input maxlength="3" value="10" inputmode="numeric"></ion-input>
+      </ion-item>
+
+      <ion-item id="tolerancia" margin-vertical>
+        <ion-label position="floating" >Tolerancia (%)</ion-label>
+        <ion-input type="text" id="porcentaje" clear-input maxlength="2" value="5" inputmode="numeric"></ion-input>
+      </ion-item>
+      <ion-item id="gananciaa" margin-vertical>
+        <ion-label position="floating" >Tipo</ion-label>
+        <ion-input type="text" id="tipo" clear-input readonly></ion-input>
+      </ion-item>
+        
+        <ion-grid>
+          <ion-row>
+          <ion-col size="2">
+        
+  
+          <ion-button size="small" class="botonpicho" id="before">
+            
+            <ion-icon name="arrow-dropleft-circle"></ion-icon>
+          </ion-button> 
+        
+        </ion-col> 
+        <ion-col>
+          <h2>
+            <center>Selecciona la configuracion</center>
+          </h2>
+        </ion-col>
+        
+      <ion-col size="2">
+
+          <ion-button size="small" class="botonpicho" id="next" >
+            <ion-icon name="arrow-dropright-circle"></ion-icon>
+          </ion-button>
+      </ion-col> 
+    </ion-row>
+    <ion-row>
+      <ion-col>
+
+        <ion-img src="/img/1.png" id="imagen" style="height: 200px"></ion-img>
+      </ion-col>
+    </ion-row>
+     <ion-row>
+       <ion-col size-md="4" offset-md="1" size="5">
+  <ion-button id="jeje" margin-vertical color="secondary">
+    <ion-icon name="checkmark" slot="start" ></ion-icon>
+    Calcular          
+  </ion-button>
+</ion-col>
+<ion-col size="1"></ion-col>
+<ion-col size-md="4" offset-md="1" size="5">
+
+  <ion-button id="whatsapp" margin color="success" href="htpp://google.com">
+    <ion-icon name="send" slot="start" ></ion-icon>
+    Whatsapp           
+  </ion-button>
+</ion-col>
+
+</ion-row>
+<ion-col>
+
+    <ion-row style="text-align: center;">
+        <div id="values">Calculando...</div>
+     
+      </div>
+    </ion-col>
+    </ion-row>
+   
+    </ion-grid>
+
+      
+    </ion-card-content>
+  </ion-card>
+
+  
+  </ion-content>
+
+</ion-app>
+  
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+
+    <!-- LOGIC -->
+  <script src="./main.js"></script>
+</body>
+</html>
