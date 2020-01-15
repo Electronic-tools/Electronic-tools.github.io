@@ -42,7 +42,7 @@ $(document).ready(function(){
 		if(nactual>2){
 			nactual=1;
 		}
-		$('#imagen').attr("src","/img/"+nactual+".png");
+		$('#imagen').attr("src","img/"+nactual+".png");
 		
 		
 		$('#tipo').val(tipo[nactual-1]);
@@ -57,7 +57,7 @@ $(document).ready(function(){
 		if(nactual<1){
 			nactual=2;
 		}
-		$('#imagen').attr("src","/img/"+nactual+".png");
+		$('#imagen').attr("src","img/"+nactual+".png");
 		$('#tipo').val(tipo[nactual-1]);
 
 
@@ -185,11 +185,14 @@ first value, if you want to, substract an unit from it.*/
 		var saludo = "Hola! Gracias por utilizar el servicio, los valores obtenidos son: "
 		var texto= "R1: "+r1+" R2: "+ r2+" Ganancia: "+practialGain;
 
-		$('#values').text(texto);
+		$('#values').text(texto); //Print on website
 		texto=saludo+texto;
 
-  		$("#whatsapp").attr("href",ToWhatsapp(texto,""));
-
+  		$("#whatsapp").attr("href",ToWhatsapp(texto,"")); //Generate whatsapp url
+		var codeR1 = r1.toString();
+		var codeR2 = r2.toString();
+		ColorsCode(codeR1,false);
+		ColorsCode(codeR2,true);
 
 	}
 
@@ -224,7 +227,70 @@ first value, if you want to, substract an unit from it.*/
 		$('#values').text(texto);
 		texto=saludo+texto;
 
-  		$("#whatsapp").attr("href",ToWhatsapp(texto,""));
+		  $("#whatsapp").attr("href",ToWhatsapp(texto,""));
+		var codeR1 = r1.toString();
+		var codeR2 = r2.toString();
+		ColorsCode(codeR1,false);
+		ColorsCode(codeR2,true);
+		  
+
+
+	}
+	function ColorsCode(pResistor,r1orr2){
+		var code = {
+			0:"black",
+			1:"Maroon",
+			2:"#e72424",
+			3:"#e76624",
+			4:"yellow",
+			5:"green",
+			6:"#24d7e7",
+			7:"purple",
+			8:"grey",
+			9:"white"
+		}
+		var contador = 1;
+		for (var je of pResistor){
+			console.log(je);
+		var change = code[je];
+		console.log(change);
+		
+		console.log("Contador:"+contador);
+		var frase="Colors";
+		
+		if(r1orr2 == true){
+			console.log("ENTRE");
+			frase = frase.toLowerCase();
+
+		}
+		var textoAux = "#"+frase+contador;
+		console.log(textoAux);
+		$(textoAux).css("background-color",change);
+		contador++;
+		if (contador>2){
+			break;
+		}
+		
+	}
+	contador=3;
+	textoAux = "#"+frase+contador;
+	if (pResistor>=1000000){
+		$(textoAux).css("background-color",code[5]);
+
+	} else if(pResistor>=100000){
+	$(textoAux).css("background-color",code[4]);
+
+	} else if(pResistor>=10000){
+		$(textoAux).css("background-color",code[3]);
+	
+		} else if(pResistor>=1000){
+			$(textoAux).css("background-color",code[2]);
+		
+			} else{
+				$(textoAux).css("background-color",code[1]);
+
+			}
+
 
 
 	}
