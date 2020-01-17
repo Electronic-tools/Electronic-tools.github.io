@@ -193,7 +193,7 @@ first value, if you want to, substract an unit from it.*/
 		var codeR2 = r2.toString();
 		ColorsCode(codeR1,false);
 		ColorsCode(codeR2,true);
-		responsiveVoice.speak("¡Hola! Seré tu asistente, juntos, vamos a contruir algo genial para ti.","Spanish Latin American Male");
+		responsiveVoice.speak(" Hola Sere tu asistente, juntos, vamos a contruir algo genial para ti.","Spanish Latin American Female");
 		console.log("Que verga!!!!!!!!!!!!!!");
 
 	}
