@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
 	//Comercial resistor values up to 1k
-	responsiveVoice.speak("¡Hola! Seré tu asistente, juntos, vamos a contruir algo genial para ti.","Spanish Latin American Female");
 	var listado = [1000,1200,1500,1800,2200,2700,3300,3900,4700,5100,5600,6800,8200,10000];
 	var listado1 = [1000,1200,1500,1800,2200,2700,3300,3900,4700,5100,5600,6800,8200,10000];
 	var listado2 = [1000,1200,1500,1800,2200,2700,3300,3900,4700,5100,5600,6800,8200,10000];
@@ -194,6 +193,8 @@ first value, if you want to, substract an unit from it.*/
 		var codeR2 = r2.toString();
 		ColorsCode(codeR1,false);
 		ColorsCode(codeR2,true);
+			responsiveVoice.speak("¡Hola! Seré tu asistente, juntos, vamos a contruir algo genial para ti.","Spanish Latin American Female");
+
 
 	}
 
