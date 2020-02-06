@@ -1,3 +1,157 @@
-.botonpicho{
+body{
+    color-adjust:exact;
+    -webkit-print-color-adjust: exact;
+
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     
+}
+.fondo{
+    
+    max-width: 100vw;
+    overflow: hidden;
+}
+.fondo h1{
+    
+    font-family: sans-serif;
+    font-size: 130px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(255, 255, 255, .1);
+    background-image: url("background.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;
+    animation: animate 8s linear infinite ;
+
+    
+}
+
+.centrame a{
+  margin-left: 50px;
+
+}
+.fondo .centrame a {
+    text-decoration: none;
+
+}
+.fondo .eva {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+   
+}
+.fondo .eva img{
+    max-width:100%;
+}
+.uno img{ 
+    max-width: 100vw;
+}
+.nombre{
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.nombreForm{
+    display: block;
+    text-align: center;
+
+}
+.nombre form label{
+    margin: auto;
+    font-size: 2em;
+
+
+}
+.nombre input{
+    max-width: 60vw;
+    margin:auto;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid cornflowerblue;
+    outline: none;
+    
+
+    
+}
+.nombre form input[type="button"]{
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    border: none;
+    background-color: cyan;
+    transition-duration: 0.5s;
+    border-radius: 50px;
+    
+}
+.nombre input[type="button"]:hover{
+    
+      background-color:darkcyan;
+      
+  }
+  a{
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #2196f3;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+  }
+ 
+.seleccion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100vh;
+    flex-wrap: wrap;
+}
+.seleccion img{
+    display: block;
+    margin:auto;
+    max-width: 90vw;
+
+}
+.opcion1,.opcion2,.opcion3{
+    display: block;
+    max-width:100vw;
+    text-align: center;
+    
+}
+.opcion1 p,.opcion2 p,.opcion3 p{
+    text-align: justify;
+    margin: 10px;
+}
+.guaza{
+    text-align: center;
+	text-decoration: none;
+	border: 1px solid white;
+	padding:10px 5px;
+	width: 50%;
+	margin: auto;
+	border-radius: 20px;
+	background-color: #01E675;
+	text-transform: uppercase;
+	box-sizing: content-box;
+	color:white;
+	letter-spacing: 1px;
+}
+
+@keyframes animate {
+    0%{
+        background-position: top 0px left 0px;
+    }
+    
+    
+    100%{
+        background-position: top 500px  left 0px;
+    }
 }
