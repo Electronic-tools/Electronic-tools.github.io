@@ -1,144 +1,291 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Calculadora amplificacodes operacionales</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="estilos.css" />
+    <title>Generador de circuitos Online</title>
+
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/41eb7a6f9c.js" crossorigin="anonymous"></script>
 
 
-  </head>
+</head>
+
 <body>
-<ion-app>
-  <ion-header>
-    <ion-toolbar color="primary ">
-      <ion-buttons slot="start">
-        <ion-button >
-          <ion-icon name="calculator" ></ion-icon>
-        </ion-button>
-      </ion-buttons>
-      <ion-title >
-      Op Amp Designer tool
-    </ion-title>
-    </ion-toolbar>
-    
-  </ion-header>
-  <ion-content>
-  <ion-card color="light">
-    <ion-card-header >
-      <ion-card-title>
-        <center>        Generador inversor no inversor
-        </center>
-      </ion-card-title>
-      <ion-card-subtitle  style="text-align: justify; font-size: 15px;">
-        Esta poderosa herramienta web permite calcular las resistencias necesarias para una ganancia deseada. Seleccione el tipo de configuración, la ganancia requerida y el porcentaje de toleracia requerido para el calculo. Automaticamente se otorgará un conjunto de resistencias que cumplen con los requisitos propuestos.
-      </ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item id="ganancia" margin-vertical>
-        <ion-label position="floating" >Ganancia (Adimensional)</ion-label>
-        <ion-input type="text" id="GainUser" clear-input maxlength="3" value="10" inputmode="numeric"></ion-input>
-      </ion-item>
+    <div class="fondo" style="" id="fondo">
+        <div class="centrame" style="display: none;" id="sera">
+            <h1>Hola.</h1>
+            <a href="#" id="dame">
+                Empezar
+            </a>
+        </div>
+        <div class="eva" style="display:none">
 
-      <ion-item id="tolerancia" margin-vertical>
-        <ion-label position="floating" >Tolerancia (%)</ion-label>
-        <ion-input type="text" id="porcentaje" clear-input maxlength="2" value="5" inputmode="numeric"></ion-input>
-      </ion-item>
-      <ion-item id="gananciaa" margin-vertical>
-        <ion-label position="floating" >Tipo</ion-label>
-        <ion-input type="text" id="tipo" clear-input readonly></ion-input>
-      </ion-item>
-        
-        <ion-grid>
-          <ion-row>
-          <ion-col size="2">
-        
-  
-          <ion-button size="small" class="botonpicho" id="before">
-            
-            <ion-icon name="arrow-dropleft-circle"></ion-icon>
-          </ion-button> 
-        
-        </ion-col> 
-        <ion-col>
-          <h2>
-            <center>Selecciona la configuracion</center>
-          </h2>
-        </ion-col>
-        
-      <ion-col size="2">
+            <img src="https://pngimage.net/wp-content/uploads/2018/05/eva-png.png" alt="">
 
-          <ion-button size="small" class="botonpicho" id="next" >
-            <ion-icon name="arrow-dropright-circle"></ion-icon>
-          </ion-button>
-      </ion-col> 
-    </ion-row>
-    <ion-row>
-      <ion-col>
+        </div>
+        <div class="uno" style="display:none">
 
-        <ion-img src="img/1.png" id="imagen" style="height: 200px"></ion-img>
-      </ion-col>
-    </ion-row>
-     <ion-row>
-       <ion-col size-md="4" offset-md="1" size="5">
-  <ion-button id="jeje" margin-vertical color="secondary">
-    <ion-icon name="checkmark" slot="start" ></ion-icon>
-    Calcular          
-  </ion-button>
-</ion-col>
-<ion-col size="1"></ion-col>
-<ion-col size-md="4" offset-md="1" size="5">
+            <img src="1.png" alt="">
 
-  <ion-button id="whatsapp" margin color="success" href="htpp://google.com">
-    <ion-icon name="send" slot="start" ></ion-icon>
-    Whatsapp           
-  </ion-button>
-</ion-col>
+        </div>
+        <div class="nombre" style="display: none;">
 
-</ion-row>
-<ion-col>
+            <form class="">
+                <label for="nombreForm" class="nombreForm">¿Cómo te llamas?</label>
+                <input type="text" id="nombreForm" class="nombreForm" placeholder="Ingresa tu nombre"
+                    autocomplete="off">
+                <input type="button" value="Mucho gusto" id="nameForm">
+            </form>
 
-    <ion-row style="text-align: center;">
-        <div id="values">Calculando...</div>
-     
-      </div>
-    </ion-col>
-    </ion-row>
-    <ion-row style="background-color: burlywood; height: 50px;padding: 10px;">
-      <ion-col id="Colors1" margin-horizontal="1" style="background-color: black;"></ion-col>
-      <ion-col id="Colors2" margin-horizontal="1"style="background-color: black;"></ion-col>
-      <ion-col id="Colors3" margin-horizontal="1"style="background-color: black;"></ion-col>
-      <ion-col id="Colors44" margin-horizontal="1" style="background-color:darkkhaki;"></ion-col>
+        </div>
 
-    </ion-row>
-    <ion-row margin-vertical style="background-color: burlywood; height: 50px;padding: 10px;">
-      <ion-col id="colors1" margin-horizontal="1" style="background-color: black;"></ion-col>
-      <ion-col id="colors2" margin-horizontal="1"style="background-color: black;"></ion-col>
-      <ion-col id="colors3" margin-horizontal="1"style="background-color: black;"></ion-col>
-      <ion-col id="colors44" margin-horizontal="1" style="background-color:darkkhaki;"></ion-col>
+        <div class="seleccion" style="display: none;">
+            <div class="opcion1" style="display: none;">
+                <h3>Ajustar Rango de señal</h3>
+                <img src="1.png" alt="" id="rango_senal">
+                <p>Convierte una señal pequeña o con valores negativos,
+                    en una señal en el rango deseado.</p>
 
-    </ion-row>
-   
-    </ion-grid>
+            </div>
+            <div class="opcion2" style="display: none;">
+                <h3>Transductor lineal</h3>
+                <img src="1.png" alt="">
+                <p>Convierte la salida de un sensor en una señal
+                    que representa la variable fisica medida.
+                </p>
 
-      
-    </ion-card-content>
-  </ion-card>
+            </div>
+            <div class="opcion3" style="display: none;">
+                <h3>Generador de amplificadores</h3>
+                <img src="1.png" alt="">
+                <p>Genera las resistencias comerciales necesarias para obtener un amplificador
+                    con la ganancia dada.</p>
 
-  
-  </ion-content>
+            </div>
+        </div>
+        <div class="nombre" style="display: none;" id="RangoInicial">
 
-</ion-app>
-  
+            <form class="">
+                <h3 style="text-align: center;">Indica el rango de la señal inicial</h3>
+                <p style="text-align: justify; margin:10px;">Ejemplo, señal que varia entre -2 y 2 voltios. <b> por
+                        comas</b>, indicando
+                    <b>el valor negativo primero</b>
+                </p>
+                <label for="rangoInicialUser" class="nombreForm"></label>
+                <input type="text" id="rangoInicialUser" class="nombreForm" placeholder="-2,2" autocomplete="off"
+                    value="-2,2" onkeydown="return event.key != 'Enter';">
+                <input type="button" value="Enviar" id="rangoInicialButton">
+            </form>
 
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+        </div>
 
-    <!-- LOGIC -->
-  <script src="./main.js"></script>
-<script src="https://code.responsivevoice.org/responsivevoice.js?key=Qxb0Czoy"></script>
-  
+        <div class="nombre" style="display: none;" id="RangoFinal">
+
+            <form class="">
+                <h3 style="text-align: center;">Define el rango de tu señal de salida (resultado)</h3>
+                <p style="text-align: justify; margin:10px;">Ejemplo: Una señal que varia entre 0 y 5 voltios.
+                    Separa <b> por comas</b>, indicando
+                    <b>el valor inicial primero</b>
+                </p>
+                <label for="rangoInicialUser" class="nombreForm"></label>
+                <input type="text" id="rangoFinalUser" class="nombreForm" placeholder="0,5" autocomplete="off"
+                    value="0,5" onkeydown="return event.key != 'Enter';">
+                <input type="button" value="Enviar" id="rangoFinalButton">
+            </form>
+
+        </div>
+        <div class="resultados" id="Resultados" style="display: none;">
+            <div class="container mb-5">
+                <div style="margin: 10px;">
+                    <img src="Mediano.png" style="max-width: 100%;">
+
+                </div>
+
+                <div class="row" style="text-align: center;">
+                    <div class="col-12 ">
+                        <h2>Primer Operacional</h2>
+                    </div>
+                    <div class="col-6" style="border: black 1px solid" id="PrimerAOPR1">
+                        R1: 5000
+                    </div>
+                    <div class="col-6" style="border: black 1px solid" id="PrimerAOPR2">
+                        R2:3000
+                    </div>
+                </div>
+                <div class="row justify-content-around" style="border: black 1px solid;">
+                    <div class="col-5" style="border: black 2px solid;  margin:5px 0px">
+                        <div class="row justify-content-center" style="background-color:#dfbd75; height: 25px;">
+                            <div class="col-2" style="background-color: brown;" id="ColorsAOP111">
+
+                            </div>
+                            <div class="col-2 ml-2" style="background-color: brown;" id="ColorsAOP112">
+
+                            </div>
+                            <div class="col-2 ml-2" style="background-color: brown;" id="ColorsAOP113">
+
+                            </div>
+                            <div class="col-2 ml-2" style="background-color: gold;" id="ColorsAOP114">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5" style="border: black 2px solid;  margin:5px 0px">
+                        <div class="row justify-content-center" style="background-color: #dfbd75;height: 25px;">
+                            <div class="col-2" style="background-color: brown;" id="ColorsAOP121">
+
+                            </div>
+                            <div class="col-2 ml-2" style="background-color: brown;" id="ColorsAOP122">
+
+                            </div>
+                            <div class="col-2 ml-2" style="background-color: brown;" id="ColorsAOP123">
+
+                            </div>
+                            <div class="col-2 ml-2" style="background-color: gold;" id="ColorsAOP124">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row" style="text-align: center;">
+                    <div class="col-12 ">
+                        <h2>Segundo Operacional</h2>
+                    </div>
+                    <div class="col-6" style="border: black 1px solid" id="SegundoAOPR1">
+                        R5: 5000
+                    </div>
+                    <div class="col-6" style="border: black 1px solid;">
+                        <div class="row justify-content-center"
+                            style="height: 25px;background-color: #dfbd75;border: black 2px solid;  margin:5px 0px;">
+                            <div class="col-2" style="background-color: brown;" id="ColorsAOP211">
+
+                            </div>
+                            <div class="col-2 ml-2" style="background-color: brown;" id="ColorsAOP212">
+
+                            </div>
+                            <div class="col-2 ml-2" style="background-color: brown;" id="ColorsAOP213">
+
+                            </div>
+                            <div class="col-2 ml-2" style="background-color: gold;" id="ColorsAOP214">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="text-align: center;">
+
+                    <div class="col-6" style="border: black 1px solid" id="SegundoAOPR2">
+                        R4: 5000
+                    </div>
+                    <div class="col-6" style="border: black 1px solid;">
+                        <div class="row justify-content-center"
+                            style="height: 25px;background-color: #dfbd75;border: black 2px solid;  margin:5px 0px;">
+                            <div class="col-2" style="background-color: brown;" id="ColorsAOP221">
+
+                            </div>
+                            <div class="col-2 ml-2" style="background-color: brown;" id="ColorsAOP222">
+
+                            </div>
+                            <div class="col-2 ml-2" style="background-color: brown;" id="ColorsAOP223">
+
+                            </div>
+                            <div class="col-2 ml-2" style="background-color: gold;" id="ColorsAOP224">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row" style="text-align: center;">
+
+                    <div class="col-6" style="border: black 1px solid" id="SegundoAOPR3">
+                        R3: 5000
+                    </div>
+                    <div class="col-6" style="border: black 1px solid;">
+                        <div class="row justify-content-center"
+                            style="height: 25px;background-color: #dfbd75;border: black 2px solid;  margin:5px 0px;">
+                            <div class="col-2" style="background-color: brown;" id="ColorsAOP231">
+
+                            </div>
+                            <div class="col-2 ml-2" style="background-color: brown;" id="ColorsAOP232">
+
+                            </div>
+                            <div class="col-2 ml-2" style="background-color: brown;" id="ColorsAOP233">
+
+                            </div>
+                            <div class="col-2 ml-2" style="background-color: gold;" id="ColorsAOP234">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row" style="text-align: center;">
+                    <div class="col-12 ">
+                        <h2>Fuentes</h2>
+                    </div>
+                </div>
+                <div class="row" style="text-align: center;">
+                    <div class="col-6 " style="border: black 1px solid">
+                        <h2>Constante</h2>
+                    </div>
+                    <div class="col-6 " style="border: black 1px solid">
+                        <h2>VCC</h2>
+                    </div>
+                </div>
+                <div class="row" style="text-align: center;">
+                    
+                    <div class="col-6" style="border: black 1px solid; border-top: none;" id="constante">
+                        Constante
+                    </div>
+                    <div class="col-6" style="border: black 1px solid; border-top:none" id="alimentacion">
+                        Alimentancion
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-around">
+                <div class="col-4">
+                    <button type="button" class="btn btn-warning mt-2" onclick="print()">
+                        Imprimir
+                    </button>
+                </div>
+                <div class="col-4">
+                    <button type="button" class="btn btn-success mt-2" id="guaza" href="http://facebook.com" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Enviar  
+                    </button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script src="main.js"></script>
+
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=Qxb0Czoy"></script>
+</body>
+
 </html>
